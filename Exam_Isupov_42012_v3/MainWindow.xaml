@@ -1,0 +1,52 @@
+﻿<Window x:Class="Exam_Isupov_42012_v3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exam_Isupov_42012_v3"
+        mc:Ignorable="d"
+        Title="Politex SPORT" MinHeight="600" MinWidth="950">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="InterButton">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="25"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Margin="128,64,118,52" Height="NaN" Width="NaN" x:Name="DataTable" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Id}" Header="Номер"/>
+                <DataGridTextColumn Binding="{Binding Path=Surname}" Header="Фамилия"/>
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Имя"/>
+                <DataGridTextColumn Binding="{Binding Path=Patronymic}" Header="Отчество"/>
+                <DataGridTextColumn Binding="{Binding Path=PassportS}" Header="Серия паспорта"/>
+                <DataGridTextColumn Binding="{Binding Path=PassportN}" Header="Номер паспорта"/>
+                <DataGridTextColumn Binding="{Binding Path=Inventory}" Header="Инвентарь"/>
+                <DataGridTextColumn Binding="{Binding Path=CostInventory}" Header="Стоимость" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Path=Deposit}" Header="Залог"/>
+                <DataGridTextColumn Binding="{Binding Path=Tarrif}" Header="Тариф"/>
+                <DataGridTextColumn Binding="{Binding Path=DateTimeBegin}" Header="Дата начала"/>
+                <DataGridTextColumn Binding="{Binding Path=DateTimeEnd}" Header="Дата окончания"/>
+                <DataGridTextColumn Binding="{Binding Path=CostRent}" Header="Стоимость аренды"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Background="Azure" Height="125" Grid.Row="1" Orientation="Horizontal" Margin="0,21,0,21" HorizontalAlignment="Center">
+            <Button x:Name="BtnOpen" Click="BtnOpen_Click" Content="Открыть"  Style="{StaticResource InterButton}"/>
+            <Button x:Name="BtnAdd" Click="BtnAdd_Click"  Content="Добавить"  Style="{StaticResource InterButton}"/>
+            <Button x:Name="BtnSaveAs" Click="BtnSaveAs_Click" Content="Сохранить как"  Style="{StaticResource InterButton}"/>
+            <Button x:Name="BtnSave" Click="BtnSave_Click" Content="Сохранить"  Style="{StaticResource InterButton}"/>
+        </StackPanel>
+    </Grid>
+</Window>

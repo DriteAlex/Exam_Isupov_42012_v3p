@@ -1,0 +1,73 @@
+﻿<Window x:Class="Exam_Isupov_42012_v3.WindowAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exam_Isupov_42012_v3"
+        mc:Ignorable="d"
+        Title="AddWindow" MaxHeight="520" MinHeight="520" MinWidth="500" MaxWidth="500">
+
+    <Window.Resources>
+        <Style TargetType="Label" x:Key="LabloStil">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="TextoBoxeStyle">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+            <Label Content="Фамилия" Style="{StaticResource LabloStil}"/>
+            <Label Content="Имя" Style="{StaticResource LabloStil}"/>
+            <Label Content="Отчество" Style="{StaticResource LabloStil}"/>
+            <Label Content="Серия паспорта" Style="{StaticResource LabloStil}"/>
+            <Label Content="Номер паспорта" Style="{StaticResource LabloStil}"/>
+            <Label Content="Инвентарь" Style="{StaticResource LabloStil}"/>
+            <Label Content="Стоимость инвентаря" Style="{StaticResource LabloStil}"/>
+            <Label Content="Залог" Style="{StaticResource LabloStil}"/>
+            <Label Content="Тариф" Style="{StaticResource LabloStil}"/>
+            <Label Content="Дата начала аренды" Style="{StaticResource LabloStil}"/>
+            <Label Content="Дата окончания аренды" Style="{StaticResource LabloStil}"/>
+            <Label Content="Стоимость аренды" Style="{StaticResource LabloStil}"/>
+            <Label Content="Номер" Style="{StaticResource LabloStil}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <TextBox Grid.Column="1" x:Name="tbSurname" Style="{StaticResource TextoBoxeStyle}"/>
+            <TextBox Grid.Column="1" x:Name="tbName" Style="{StaticResource TextoBoxeStyle}"/>
+            <TextBox Grid.Column="1" x:Name="tbPatronymic" Style="{StaticResource TextoBoxeStyle}"/>
+            <TextBox Grid.Column="1" x:Name="tbPassportS" Style="{StaticResource TextoBoxeStyle}"/>
+            <TextBox Grid.Column="1" x:Name="tbPassportN" Style="{StaticResource TextoBoxeStyle}"/>
+            <TextBox Grid.Column="1" x:Name="tbInventory" Style="{StaticResource TextoBoxeStyle}"/>
+            <TextBox Grid.Column="1" x:Name="tbCostInventory" Style="{StaticResource TextoBoxeStyle}"/>
+            <TextBox Grid.Column="1" x:Name="tbDeposit" Style="{StaticResource TextoBoxeStyle}"/>
+            <TextBox Grid.Column="1" x:Name="tbTarrif" Style="{StaticResource TextoBoxeStyle}"/>
+            <DatePicker x:Name="dpDateBegin" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="120" Margin="3"/>
+            <DatePicker x:Name="dpDateEnd" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="120" Margin="3"/>
+            <TextBox Grid.Column="1" x:Name="tbCostRent" Style="{StaticResource TextoBoxeStyle}"/>
+            <TextBox Grid.Column="1" x:Name="tbId" Style="{StaticResource TextoBoxeStyle}"/>
+        </StackPanel>
+        <Button Content="Сохранить" Click="BtnSave_Click" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" Width="100" Height="25" Grid.Column="1"/>
+
+    </Grid>
+</Window>
